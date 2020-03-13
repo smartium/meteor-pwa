@@ -1,0 +1,43 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="application-name" content="my cool pwa">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=5, minimum-scale=-5"/>
+  <meta name="theme-color" content="#FF00AA">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" type="image/png" href="/images/icons-192?v1" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="192x192" href="/images/icons-192.png">
+  <link rel="fluid-icon" href="/images/icons-192.png?v1" title="app icon">
+  <title>SMARTIUM labs</title>
+  <noscript>
+    <style>
+      body:before { content: "Sorry, your browser does not support JavaScript!"; }
+    </style>
+  </noscript>
+</head>
+
+<body>
+  {{> loginButtons}}
+
+  <h1>SMARTIUM labs</h1>
+  <h2>PWA WebApp Test</h2>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <div class="avatar">
+    {{#if user}}
+    <img src="{{user.services.google.picture}}" alt="User Photo">
+    {{/if}}
+  </div>
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+
+  <h1>
+    {{#if status}}
+    <span style="color:green"><i>Servidor Online :)</i></span>
+    {{else}}
+    <span style="color:red"><i>Servidor OFFLINE :(</i></span>
+    {{/if}}
+  </h1>
+</template>
